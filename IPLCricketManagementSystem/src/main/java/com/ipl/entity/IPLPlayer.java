@@ -49,7 +49,7 @@ public class IPLPlayer implements Serializable{
 	private LocalDate updatedOn;
 	
 	//Association mapping (many players belong to one team)
-	@ManyToOne(targetEntity = IPLTeam.class, cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	@ManyToOne(targetEntity = IPLTeam.class, cascade = CascadeType.MERGE,fetch = FetchType.LAZY)
 	@JoinColumn(name = "team_id",referencedColumnName ="teamId")//for FK column cfg
 	private IPLTeam team;
 	
